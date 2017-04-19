@@ -93,6 +93,7 @@ class Account extends ComponentBase
         $this->page['user'] = $this->user();
         $this->page['loginAttribute'] = $this->loginAttribute();
         $this->page['loginAttributeLabel'] = $this->loginAttributeLabel();
+        $this->page['PasswordAttributeLabel'] = $this->PasswordAttributeLabel();
     }
 
     /**
@@ -123,6 +124,14 @@ class Account extends ComponentBase
         return $this->loginAttribute() == UserSettings::LOGIN_EMAIL
             ? Lang::get('rainlab.user::lang.login.attribute_email')
             : Lang::get('rainlab.user::lang.login.attribute_username');
+    }
+
+     /**
+     * Returns the password label as a word.
+     */
+    public function PasswordAttributeLabel()
+    {
+        return Lang::get('rainlab.user::lang.account.password');
     }
 
     /**
